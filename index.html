@@ -9,7 +9,7 @@
         :root {
             --bg-color: #121212;
             --container-bg: #1e1e1e;
-            --accent-color: #00ff9d; /* Modern Mint Green */
+            --accent-color: #00ff9d; 
             --text-main: #e0e0e0;
             --border-style: 4px solid #333;
         }
@@ -23,10 +23,9 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding-top: 50px;
+            padding: 50px 20px;
         }
 
-        /* Professional Header Navigation */
         nav {
             display: flex;
             gap: 10px;
@@ -41,7 +40,6 @@
             font-family: 'VT323', monospace;
             font-size: 20px;
             cursor: pointer;
-            transition: 0.2s;
         }
 
         nav button:hover {
@@ -49,26 +47,19 @@
             color: var(--accent-color);
         }
 
-        /* The Main Content Box */
         .main-frame {
             background-color: var(--container-bg);
             border: var(--border-style);
-            width: 90%;
-            max-width: 800px;
+            width: 100%;
+            max-width: 900px;
             padding: 40px;
             box-shadow: 10px 10px 0px #000;
+            box-sizing: border-box;
         }
 
-        /* Page Handling */
-        .content-section {
-            display: none; /* Hidden by default */
-        }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
 
-        .content-section.active {
-            display: block; /* Only show active section */
-        }
-
-        /* Typography */
         h1 {
             color: var(--accent-color);
             font-size: 48px;
@@ -77,9 +68,43 @@
             padding-bottom: 10px;
         }
 
-        .data-label {
+        /* DUAL VIDEO GRID SYSTEM */
+        .video-container-grid {
+            display: flex;
+            flex-direction: row; /* Horizontal layout */
+            flex-wrap: wrap;     /* Wrap to next line if screen is too small */
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .terminal-box {
+            flex: 1;             /* Allow boxes to grow equally */
+            min-width: 300px;    /* Don't let them get too skinny */
+            max-width: 400px;
+            border: 4px solid #333;
+            padding: 5px;
+            background: #000;
+        }
+
+        .terminal-header {
+            background: #333;
             color: var(--accent-color);
-            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: none;
         }
 
         .essay-text {
@@ -87,15 +112,12 @@
             font-size: 18px;
             line-height: 1.6;
             background: #121212;
-            padding: 20px;
+            padding: 25px;
             border-left: 4px solid var(--accent-color);
+            white-space: pre-wrap;
         }
 
-        footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #666;
-        }
+        footer { margin-top: 40px; font-size: 14px; color: #666; }
     </style>
 </head>
 <body>
@@ -111,35 +133,49 @@
         <section id="home" class="content-section active">
             <h1>YAHYA DAUKI</h1>
             <p>System Architect & Student Portfolio</p>
-            <p style="font-size: 22px;">Welcome to the centralized database. Access the navigation tabs above to view specific logs and system data.</p>
+            <p>> Loading Visual Projects...</p>
+            
+            <div class="video-container-grid">
+                <div class="terminal-box">
+                    <div class="terminal-header">> STREAM_01: FOOD_CLICKER.mp4</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://drive.google.com/file/d/19qTzqdxlcCyw8r2GZfZ8hgFMfuiyH1Hu/preview" ></iframe>
+                    </div>
+                </div>
+
+                <div class="terminal-box">
+                    <div class="terminal-header">> STREAM_02: FIRE_SAVERS.mp4</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1wY0CnBC5SP510njV4p0xfD6QR0EVHaGD/preview" ></iframe>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="logs" class="content-section">
             <h1>ACCOMPLISHMENT_LOGS</h1>
-            <p><span class="data-label">[LOG_01]</span> Academic Excellence Award - 2024</p>
-            <p><span class="data-label">[LOG_02]</span> Leadership Milestone: Project Lead</p>
-            <p><span class="data-label">[LOG_03]</span> Community Contribution Recognition</p>
+            <p>[LOG_01] Academic Excellence Award - 2024</p>
+            <p>[LOG_02] Leadership Milestone: Project Lead</p>
         </section>
 
         <section id="data" class="content-section">
             <h1>CORE_COMPETENCIES</h1>
-            <p>Analytical Thinking: <span class="data-label">ADVANCED</span></p>
-            <p>Technical Writing:  <span class="data-label">EXPERT</span></p>
-            <p>Project Management: <span class="data-label">STABLE</span></p>
+            <p>Analytical Thinking: ADVANCED</p>
+            <p>Technical Writing:  EXPERT</p>
         </section>
 
         <section id="essay" class="content-section">
             <h1>RESEARCH_DOCUMENT</h1>
             <div class="essay-text">
-                <p>/* ESSAY START */</p>
-                
- 	<p>Name: Yahya Dauki
+/* ESSAY START */
+
+<p>
+ 	Name: Yahya Dauki
 Email: dauki7902@mydusd.org
 Phone: None
 Location: Dublin, CA
 Career Goal: Professional Soccer Player or Doctor
-Key Skills: Teamwork, Adaptability, Patience, Responsibility, Communication.<p>
-
+Key Skills: Teamwork, Adaptability, Patience, Responsibility, Communication<p>
 
 <p>My name is Yahya Dauki and I am a motivated freshman trying to form a strong academic background for college and strive at sports in order to get a scholarship. It may seem far-fetched but my main goal for my career is to become a professional soccer player. I have always loved soccer and worked very hard, now training with my team at least 3 times a week, it has been my dream to become a professional player. Since it is very difficult and unlikely to become a professional soccer player my alternative career route is to become a doctor. Although I do not have that much knowledge in Health, it has always intrigued me how one day I might be able to save someone else’s life.
 
@@ -147,50 +183,25 @@ Key Skills: Teamwork, Adaptability, Patience, Responsibility, Communication.<p>
 
 	Now diving into my academics, I am an all A student who works hard in all my classes. Balancing school with my soccer has been very difficult for me, but it has also taught me some new skills. The first skill is time management: I can’t take more than 2 hours to do my homework or else I will be late to my soccer practice and get no play time in the games. Another skill was Focus: Focusing in class meant that I had less to do at home so that I can get time to relax before my soccer practice. Lastly, work ethic: Even though I don’t want to, I put myself in the mindset that I must complete this assignment, and then move on to the next one as diligently as possible to be time efficient and accurate.
 
-Thank you for your time,
-</p>
-                <p>/* END OF DOCUMENT */</p>
+Thank you for your time,<p>
+
+
+/* END OF DOCUMENT */
             </div>
         </section>
     </div>
-<div style="margin-top: 25px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
-    <div style="border: 4px solid #333; padding: 5px; background: #000; width: 350px;">
-        <div style="background: #333; color: #00ff9d; padding: 5px; font-size: 12px; margin-bottom: 5px;">
-            > STREAM_01: FOOD_CLICKER.mp4
-        </div>
-        <video width="100%" controls style="border: 2px solid #222;">
-            <source src="https://drive.google.com/file/d/19qTzqdxlcCyw8r2GZfZ8hgFMfuiyH1Hu/view?usp=sharing" type="video/mp4">
-            FILE_NOT_FOUND
-        </video>
-    </div>
-
-    <div style="border: 4px solid #333; padding: 5px; background: #000; width: 350px;">
-        <div style="background: #333; color: #00ff9d; padding: 5px; font-size: 12px; margin-bottom: 5px;">
-            > STREAM_02: FIRE_SAVERS.mp4
-        </div>
-        <video width="100%" controls style="border: 2px solid #222;">
-            <source src="https://drive.google.com/file/d/1wY0CnBC5SP510njV4pOxfD6QR0EVHaGD/view?usp=sharing" type="video/mp4">
-            FILE_NOT_FOUND
-        </video>
-    </div>
-
-</div>
     <footer>&copy; 2026 YAHYA DAUKI | SYSTEM_STABLE</footer>
 
     <script>
         function openTab(tabName) {
-            // 1. Find all sections and hide them
             var sections = document.getElementsByClassName("content-section");
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove("active");
             }
-
-            // 2. Show the specific tab that was clicked
             document.getElementById(tabName).classList.add("active");
         }
     </script>
 
 </body>
-
 </html>
