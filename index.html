@@ -102,13 +102,9 @@
             overflow: hidden;
         }
 
-        .video-wrapper iframe {
+        .video-wrapper video {
             position: absolute;
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: none;
+            top: 0; left: 0; width: 100%; height: 100%; background: #000;
         }
 
         .essay-text {
@@ -143,14 +139,20 @@
                 <div class="terminal-box">
                     <div class="terminal-header">&gt; STREAM_01: FOOD_CLICKER.mp4</div>
                     <div class="video-wrapper">
-                        <iframe src="https://drive.google.com/file/d/19qTzqdxlcCyw8r2GZfZ8hgFMfuiyH1Hu/embed" allow="autoplay"></iframe>
+                        <video controls preload="metadata">
+                            <source src="PASTE_FOOD_CLICKER_DIRECT_LINK_HERE.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
 
                 <div class="terminal-box">
                     <div class="terminal-header">&gt; STREAM_02: FIRE_SAVERS.mp4</div>
                     <div class="video-wrapper">
-                        <iframe src="https://drive.google.com/file/d/1wY0CnBC5SP510njV4p0xfD6QR0EVHaGD/embed" allow="autoplay"></iframe>
+                        <video controls preload="metadata">
+                            <source src="PASTE_FIRE_SAVERS_DIRECT_LINK_HERE.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
