@@ -71,16 +71,16 @@
         /* DUAL VIDEO GRID SYSTEM */
         .video-container-grid {
             display: flex;
-            flex-direction: row; /* Horizontal layout */
-            flex-wrap: wrap;     /* Wrap to next line if screen is too small */
+            flex-direction: row; 
+            flex-wrap: wrap;     
             gap: 20px;
             margin-top: 30px;
             justify-content: center;
         }
 
         .terminal-box {
-            flex: 1;             /* Allow boxes to grow equally */
-            min-width: 300px;    /* Don't let them get too skinny */
+            flex: 1;             
+            min-width: 300px;    
             max-width: 400px;
             border: 4px solid #333;
             padding: 5px;
@@ -102,7 +102,7 @@
             overflow: hidden;
         }
 
-        .video-wrapper video {
+        .video-wrapper iframe {
             position: absolute;
             top: 0; 
             left: 0; 
@@ -143,20 +143,14 @@
                 <div class="terminal-box">
                     <div class="terminal-header">&gt; STREAM_01: FOOD_CLICKER.mp4</div>
                     <div class="video-wrapper">
-                        <video controls preload="metadata">
-                            <source src="https://drive.google.com/uc?id=19qTzqdxlcCyw8r2GZfZ8hgFMfuiyH1Hu&export=download" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe src="https://drive.google.com/file/d/19qTzqdxlcCyw8r2GZfZ8hgFMfuiyH1Hu/embed" allow="autoplay"></iframe>
                     </div>
                 </div>
 
                 <div class="terminal-box">
                     <div class="terminal-header">&gt; STREAM_02: FIRE_SAVERS.mp4</div>
                     <div class="video-wrapper">
-                        <video controls preload="metadata">
-                            <source src="https://drive.google.com/uc?id=1wY0CnBC5SP510njV4p0xfD6QR0EVHaGD&export=download" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe src="https://drive.google.com/file/d/1wY0CnBC5SP510njV4p0xfD6QR0EVHaGD/embed" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
